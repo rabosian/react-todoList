@@ -14,10 +14,14 @@ function App() {
 
   return (
     <main>
-      <input value={inputValue} type="text" onChange={(event)=> setInputValue(event.target.value)}/>
-      <button onClick={addItem}>Add</button>
+      <div className='header'>
+        <h1>Todo List</h1>
+        <input value={inputValue} type="text" onChange={(event)=> setInputValue(event.target.value)}/>
+        <button onClick={addItem}>Add</button>
+      </div>
 
-      <TodoBoard />
+      <TodoBoard todoList={todoList}/>
+
     </main>
   );
 }
