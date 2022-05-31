@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import TodoBoard from './components/TodoBoard';
+import TodoItem from './components/TodoItem';
 
 
 function App() {
@@ -9,19 +9,34 @@ function App() {
 
   const addItem = () => {
     setTodoList([...todoList, inputValue])
+    setInputValue('')
   }
 
+  const deleteItem = (id) => {
+    setTodoList((prev) => {
+      prev.filter((item,index) => {
+        return index !== id
+      })
+    })
+  }
 
   return (
     <main>
       <div className='header'>
         <h1>Todo List</h1>
-        <input value={inputValue} type="text" onChange={(event)=> setInputValue(event.target.value)}/>
-        <button onClick={addItem}>Add</button>
+        <input value={inputValue} type="text" placeholder='enter some text' onChange={(event)=> setInputValue(event.target.value)}/>
+        <button className='add-btn' onClick={addItem}>Add</button>
       </div>
-
-      <TodoBoard todoList={todoList}/>
-
+      <div>
+        {todoList.map((item, index) => {
+          return <TodoItem 
+            key={index}
+            id={index}
+            item={item}
+            deleteItem={deleteItem}
+          />
+        })}
+      </div>
     </main>
   );
 }
