@@ -4,20 +4,19 @@
 body {
     background-color: #c5dee0;
     font-family: 'Architects Daughter', cursive;
-    min-height: 50vh;
+    min-height: 100vh;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 
 .container {
     width: 100%;
     height: auto;
     min-height: 500px;
-    min-width: 300px;
+    min-width: 350px;
     max-width: 500px;
     background: #f1f5f8;
     border-radius: 20px;
