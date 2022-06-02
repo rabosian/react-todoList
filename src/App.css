@@ -26,19 +26,30 @@ input {
     padding: 5px 8px;
 }
 .delete-btn {
-    background-color: rgb(219, 148, 120);
-    cursor: pointer;
+    margin-left: 10px;
     border: none;
     color: white;
-    padding: 5px 8px;
-
+    border-radius: 5px;
+    background: none;
+    padding-top: 4px;
+    padding-bottom: 4px;
 }
 
-.todo-item {
+ul {
+    list-style: none;
+}
+
+li {
+    font-size: 20px;
+    text-align: center;
+    margin: 12px 0;
+}
+
+/* .todo-item {
     margin: 10px auto 0 auto;
     text-align: center;
     line-height: 50px;
     width: 400px;
     height: 50px;
     border: 2px solid lightblue;
-}
+} */
